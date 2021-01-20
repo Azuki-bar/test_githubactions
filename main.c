@@ -3,7 +3,7 @@ int fraction(int n) {
     if (n < 2) {
         return 1;
     } else {
-        return (n * fraction(n - 1))
+        return (n * fraction(n - 1));
     }
 }
 int main(void) {
