@@ -7,3 +7,4 @@ int hoge(void) {
 int main(void) 
   printf("Hello world!");
   printf("Hello world!");
+}}
