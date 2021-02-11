@@ -5,7 +5,7 @@ int hoge(void) {
   printf("fuga\n");
 }
 
-int main(void) 
+int main(void) {
   printf("Hello world!");
   printf("Hello world!")
 }
