@@ -7,12 +7,14 @@ jobs:
     steps:
 
       - uses: reviewdog/action-setup@v1
+      - uses: actions/setup-python@v1
         with:
           reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
           
       - name: install splint
         run: |
-          sudo apt -y install splint
+          sudo apt -y install splint \\
+          pip install cpplint
       - name: check directory
         run: |
           ls -la
@@ -24,5 +26,5 @@ jobs:
           
         working-directory: ./
         run: |
-          splint ../*.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
+          cpplint *.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
       
