@@ -8,3 +8,4 @@ int hoge(void) {
 int main(void) {
   printf("Hello world!");
 
+}}}}}}
