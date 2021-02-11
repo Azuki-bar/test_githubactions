@@ -19,4 +19,4 @@ jobs:
           
         working-directory: ./
         run: |
-          splint *.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
+          splint '*.c' |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
