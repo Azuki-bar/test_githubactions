@@ -17,4 +17,4 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          splint img.c main.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review
+          splint img.c main.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
