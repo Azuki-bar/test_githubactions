@@ -1,5 +1,5 @@
 name: reviewdog
-on: [push,pull_request]
+on: [pull_request]
 jobs:
   reviewdog:
     name: reviewdog
@@ -15,8 +15,7 @@ jobs:
           sudo apt -y install splint
       - name: check directory
         run: |
-          
-          ls
+          ls -la
           
           
       - name: Run reviewdog
