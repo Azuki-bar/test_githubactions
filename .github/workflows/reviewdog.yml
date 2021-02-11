@@ -16,5 +16,7 @@ jobs:
       - name: Run reviewdog
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+        working-directory: ./
         run: |
-          splint img.c main.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
+          splint *.c |reviewdog -efm="%f:%l:%c: %m" -reporter=github-pr-review -filter-mode=nofilter
