@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
       - 
         name: Detect Tags
-        run: VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+        run: $(echo ${{ github.ref }} | sed -e "s#refs/tags/v\(.*\)#VERSION=\1#g" >> $GITHUB_REF)
       -
         name: show varsion
         run: |
