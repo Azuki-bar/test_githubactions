@@ -1,0 +1,25 @@
+# https://github.com/marketplace/actions/build-and-push-docker-images
+name: tags-test
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  docker:
+    env: 
+      VERSION: 0
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Check Out Repo 
+        uses: actions/checkout@v2
+      - 
+        name: Detect Tags
+        run: VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+      -
+        name: show varsion
+        run: |
+          echo $VERSION && echo ${{docker.env.VERSION}}
+        
